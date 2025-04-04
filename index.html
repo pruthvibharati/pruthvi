@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Trending News</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .logout-btn {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .content {
+      padding: 20px;
+    }
+
+    .news-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 15px;
+      margin: 15px 0;
+    }
+
+    .news-card img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+
+  <!-- 🔐 Login Check -->
+  <script>
+    if (!sessionStorage.getItem("loggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h2>Trending Now</h2>
+    </div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="entertainment1.html">Entertainment</a>
+      <a href="tech1.html">Technology</a>
+      <a href="sports1.html">Sports</a>
+      <a href="health1.html">Health</a>
+    </nav>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <div class="content">
+    <h1>Welcome to Trending News</h1>
+    <div class="news-card">
+      <h3>Latest Headline</h3>
+      <img src="images/tech.jpg" alt="News Image">
+
+      <p>This is a sample news story about the latest trends in artificial intelligence and how it's shaping our world.</p>
+    </div>
+    <div class="news-card">
+      <h3>Another Hot Topic</h3>
+      <img src="images/entertainment.jpg" alt="Entertainment">
+      <p>This is a sample entertainment story that keeps the audience engaged and excited about upcoming events.</p>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Trending Now. All rights reserved.
+  </footer>
+
+  <script>
+    function logout() {
+      sessionStorage.removeItem("loggedIn");
+      window.location.href = "login.html";
+    }
+  </script>
+
+</body>
+</html>
